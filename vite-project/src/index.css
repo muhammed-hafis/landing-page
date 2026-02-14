@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@layer components {
+    .card {
+        @apply rounded-2xl bg-blue-300 p-3;
+    }
+}
+
+@theme {
+    --font-sans: "Poppins", sans-serif;
+}
+
+body{
+    background-color: black;
+}
