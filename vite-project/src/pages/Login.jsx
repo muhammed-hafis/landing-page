@@ -1,7 +1,7 @@
 import {  useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import useAuthStore from "../store/useAuthStore";
-
+import GlowCircle from "../components/GlowCircle"
 export default function Login() {
     const navigate = useNavigate();
     const { login, token } = useAuthStore();
@@ -28,12 +28,13 @@ export default function Login() {
         if (token) {
             navigate("/home")
         }
-    },[token])
+    },[token,navigate])
     return (
-        <div className="min-h-screen bg-black flex items-center justify-center px-4 relative overflow-hidden">
+        <div className="min-h-screen bg-[repeating-linear-gradient(to_right,_rgba(255,255,255,.1)_0px,_rgba(255,255,255,0.1)_1px,_transparent_1px,_transparent_120px)] flex items-center justify-center px-4 relative overflow-hidden">
 
-            <div className="absolute w-72 h-72 bg-purple-600/30 blur-3xl rounded-full top-20 left-10"></div>
-            <div className="absolute w-72 h-72 bg-pink-500/30 blur-3xl rounded-full bottom-10 right-10"></div>
+            <GlowCircle position="left-40 top-96" size="w-32 h-32" blur="blur-md" />
+            <GlowCircle position="left-200 top-10" size="w-15 h-15" blur="blur-md" />
+            <GlowCircle position="right-40 bottom-20" size="w-50 h-50" blur="blur-md" />
 
             <div className="relative bg-zinc-900/80 backdrop-blur-md border border-zinc-800 p-8 rounded-2xl shadow-xl w-full max-w-md">
 

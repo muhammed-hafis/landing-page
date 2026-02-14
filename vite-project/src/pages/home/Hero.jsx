@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from '../../components/Navbar'
 import GlowCircle from '../../components/GlowCircle'
 import HeroContainer from '../../components/HeroContainer'
 
@@ -9,7 +8,6 @@ function Hero() {
 
 
 
-        <Navbar/>
 
           <div className='w-1/2 flex flex-col gap-6  items-center'>
               <h1 className='text-[64px] leading-20  text-center pt-50 font-semibold text-white'>

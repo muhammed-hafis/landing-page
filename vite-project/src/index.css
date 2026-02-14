@@ -13,3 +13,13 @@
 body{
     background-color: black;
 }
+
+/* Hide scrollbar but allow scrolling */
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    scrollbar-width: none;
+    /* Firefox */
+}
