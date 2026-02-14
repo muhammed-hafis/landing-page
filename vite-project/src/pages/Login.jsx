@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import useAuthStore from "../store/useAuthStore";
 
@@ -6,8 +6,8 @@ export default function Login() {
     const navigate = useNavigate();
     const { login, token } = useAuthStore();
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("user@gmail.com");
+    const [password, setPassword] = useState("user");
     const [error, setError] = useState("");
 
     const handleLogin = (e) => {
@@ -28,7 +28,7 @@ export default function Login() {
         if (token) {
             navigate("/home")
         }
-    },[token,navigate])
+    },[token])
     return (
         <div className="min-h-screen bg-black flex items-center justify-center px-4 relative overflow-hidden">
 

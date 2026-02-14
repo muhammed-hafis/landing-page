@@ -8,7 +8,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/home" element={<ProtectedRoute>
+          <Home />
+
+        </ProtectedRoute>} />
         <Route path="/" element={<Login />} />
 
         <Route
@@ -19,7 +22,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-        
+
       </Routes>
     </BrowserRouter>
   );
