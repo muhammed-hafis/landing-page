@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/dashboard/Dashboard";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Navbar from "./components/Navbar";
+import Users from "./pages/users/Users";
 
 function App() {
   return (
@@ -21,6 +22,14 @@ function App() {
           element={
             <ProtectedRoute>
               <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/users"
+          element={
+            <ProtectedRoute>
+              <Users />
             </ProtectedRoute>
           }
         />
