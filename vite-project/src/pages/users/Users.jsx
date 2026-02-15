@@ -7,22 +7,27 @@ export default function Users() {
     const [sortOrder, setSortOrder] = useState("asc");
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedUser, setSelectedUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const usersPerPage = 6;
 
     useEffect(() => {
         const fetchUsers = async () => {
             try {
+                setLoading(true);
                 const res = await fetch("https://jsonplaceholder.typicode.com/users");
                 const data = await res.json();
                 setUsers(data);
             } catch (err) {
                 console.error(err);
+            } finally {
+                setLoading(false);
             }
         };
 
         fetchUsers();
     }, []);
+
 
     // 🔍 Search
     const filteredUsers = users.filter((user) =>
@@ -45,7 +50,7 @@ export default function Users() {
     const totalPages = Math.ceil(sortedUsers.length / usersPerPage);
 
     return (
-        <div className="min-h-screen bg-black text-white px-6 pt-24">
+        <div className="min-h-screen bg-black text-white px-6 pt-22">
 
             <h1 className="text-3xl font-bold mb-8">Users</h1>
 
@@ -73,46 +78,57 @@ export default function Users() {
                 </select>
 
             </div>
-
+            {loading && (
+                <div className="flex justify-center items-center h-60">
+                    <div className="w-12 h-12 border-4 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
+                </div>
+            )}
             {/* Users Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {
+                !loading && (
 
-                {currentUsers.map((user) => (
-                    <div
-                        key={user.id}
-                        className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:border-purple-500 transition"
-                    >
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                        <div className="flex items-center gap-4 mb-4">
-                            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center font-bold">
-                                {user.name.charAt(0)}
+                        {currentUsers.map((user) => (
+                            <div
+                                key={user.id}
+                                className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:border-purple-500 transition"
+                            >
+
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center font-bold">
+                                        {user.name.charAt(0)}
+                                    </div>
+
+                                    <div>
+                                        <h2 className="font-semibold">{user.name}</h2>
+                                        <p className="text-sm text-zinc-400">{user.email}</p>
+                                    </div>
+                                </div>
+
+                                <p className="text-sm text-zinc-400 mb-2">
+                                    Company: {user.company.name}
+                                </p>
+
+                                <p className="text-sm text-zinc-400 mb-4">
+                                    City: {user.address.city}
+                                </p>
+
+                                <button
+                                    onClick={() => setSelectedUser(user)}
+                                    className="w-full py-2 rounded-lg bg-gradient-to-r from-pink-500 to-purple-600 hover:opacity-90 transition"
+                                >
+                                    View Details
+                                </button>
+
                             </div>
-
-                            <div>
-                                <h2 className="font-semibold">{user.name}</h2>
-                                <p className="text-sm text-zinc-400">{user.email}</p>
-                            </div>
-                        </div>
-
-                        <p className="text-sm text-zinc-400 mb-2">
-                            Company: {user.company.name}
-                        </p>
-
-                        <p className="text-sm text-zinc-400 mb-4">
-                            City: {user.address.city}
-                        </p>
-
-                        <button
-                            onClick={() => setSelectedUser(user)}
-                            className="w-full py-2 rounded-lg bg-gradient-to-r from-pink-500 to-purple-600 hover:opacity-90 transition"
-                        >
-                            View Details
-                        </button>
+                        ))}
 
                     </div>
-                ))}
+                )
+            }
 
-            </div>
+
 
             {/* Pagination */}
             <div className="flex justify-center mt-10 gap-3">
@@ -122,8 +138,8 @@ export default function Users() {
                         key={i}
                         onClick={() => setCurrentPage(i + 1)}
                         className={`px-4 py-2 rounded-lg ${currentPage === i + 1
-                                ? "bg-purple-600"
-                                : "bg-zinc-800 hover:bg-zinc-700"
+                            ? "bg-purple-600"
+                            : "bg-zinc-800 hover:bg-zinc-700"
                             }`}
                     >
                         {i + 1}

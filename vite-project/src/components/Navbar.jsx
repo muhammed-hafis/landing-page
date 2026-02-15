@@ -26,6 +26,9 @@ function Navbar() {
                         <Link to="/dashboard" className="text-[#9E9E9E] hover:text-white transition">
                             Dashboard
                         </Link>
+                        <Link to="/users" className="text-[#9E9E9E] hover:text-white transition">
+                            Users
+                        </Link>
 
                         <button className="px-6 py-2 rounded-sm 
             bg-gradient-to-r from-pink-400 to-purple-500 
