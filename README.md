@@ -121,36 +121,33 @@ For testing the application, use the following credentials:
 
 ## 📸 Screenshots
 
-### Login Page
-- Clean authentication interface with grid background pattern
-- Form validation and error messages
-- Responsive design with centered layout
-- Theme-aware dark/light backgrounds
+<table>
+  <tr>
+    <td><b>Login Page</b></td>
+    <td><b>Hero Section</b></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/a8c77932-3e0a-48cc-be01-6986c5ac0a5d" width="100%" />
+    </td>
+    <td>
+      <img src="https://github.com/user-attachments/assets/51a25367-1b00-48b5-ba49-33307cb3ff28" width="100%" />
+    </td>
+  </tr>
+  <tr>
+    <td><b>Dashboard Page</b></td>
+    <td><b>Users Page</b></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/7b2b3fd3-b238-429f-a4d1-ee12e45956fa" width="100%" />
+    </td>
+    <td>
+      <img src="https://github.com/user-attachments/assets/4459ea82-2c49-4746-b8f3-aa773fc4a7e0" width="100%" />
+    </td>
+  </tr>
+</table>
 
-### Dashboard Page
-- Real-time statistics cards
-- User data fetched from external API
-- Loading indicators
-- Responsive grid layout
-
-### Users Page
-- Complete user listing
-- Company information display
-- Contact details (phone, website, email)
-- Tabular data presentation
-
-### Settings Page
-- Profile name editor
-- Email display
-- Theme toggle switch
-- Save confirmation messages
-- Professional card-based layout
-
-### Navigation
-- Fixed header with logo
-- Responsive mobile menu
-- Smooth transitions
-- Active route indicators
 
 ## 🏗️ Technology Stack
 
