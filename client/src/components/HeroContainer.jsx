@@ -4,10 +4,23 @@ function HeroContainer() {
   const barData = [0, 25, 45, 55, 75, 90];
   const profile = ["1.png",'2.png','3.png','4.png']
   return (
-    <div className='absolute p-10 top-140  bg-[#131415] w-[60%] h-[550px] rounded-4xl 
-      grid grid-cols-3 grid-rows-2 gap-10 '>
+    <div
+      className="
+    absolute top-140
+    w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%]
+    h-[500px] sm:h-[520px] md:h-[550px]
+    p-6 md:p-10
+    bg-[#131415]
+    rounded-3xl md:rounded-4xl
+
+    flex flex-col overflow-auto
+    lg:grid lg:grid-cols-3 lg:grid-rows-2
+    gap-6 md:gap-10
+  "
+    >
+
         {/* first */}
-      <div className='row-span-2 flex flex-col p-7  items-center bg-[#222228] rounded-2xl '>
+      <div className='lg:row-span-2 flex flex-col p-7  items-center bg-[#222228] rounded-2xl '>
 
         {/* Header section with bottom border and centered icon */}
         <div className='border-b-[#313139] flex justify-center w-full border-b-2 pb-5'>
@@ -79,7 +92,7 @@ function HeroContainer() {
 
       {/* second */}
       {/* Main Card Container */}
-      <div className="size-full bg-[#222228] rounded-2xl p-6 flex flex-col  overflow-hidden relative">
+      <div className="size-full bg-[#222228] rounded-2xl p-6 flex flex-col  lg:overflow-hidden relative">
 
         {/* Top Section (Header / Info Area) */}
         <div className="flex justify-between items-start w-full">
@@ -279,7 +292,7 @@ function HeroContainer() {
 
       {/* Third */}
       {/* Main Card Container */}
-      <div className="size-full bg-[#222228] rounded-2xl p-6 flex flex-col  overflow-hidden relative">
+      <div className="size-full bg-[#222228] rounded-2xl p-6 flex flex-col  lg:overflow-hidden relative">
 
         {/* ===================== */}
         {/* Header Section */}
@@ -355,7 +368,7 @@ function HeroContainer() {
       </div>
       {/* Five */}
       {/* Main Card Container */}
-      <div className=' bg-[#222228] rounded-2xl h-[50%] mt-27'></div>
+      <div className=' bg-[#222228] rounded-2xl h-[50%] lg:mt-27'></div>
     </div>
   )
 }

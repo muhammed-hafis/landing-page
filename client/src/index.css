@@ -25,3 +25,15 @@ html {
     scrollbar-width: none;
     /* Firefox */
 }
+
+/* Universal hover effect: scale and subtle shadow, no color change */
+button:hover,
+.btn:hover,
+.card:hover,
+a:hover,
+.nav-link:hover,
+[role="button"]:hover {
+    transform: scale(1.04);
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.10);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}

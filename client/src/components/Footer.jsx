@@ -5,7 +5,7 @@ function Footer() {
       <footer className=" bg-transparent w-full pt-10">
 
           {/* Main Container */}
-          <div className="mx-10 bg-[#18181C] px-40 py-10">
+          <div className="mx-10 bg-[#18181C] px-5 lg:px-40 py-10">
 
               <div className="flex flex-row md:justify-between flex-wrap gap-20">
 

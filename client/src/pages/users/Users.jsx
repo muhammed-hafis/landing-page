@@ -52,7 +52,7 @@ export default function Users() {
     return (
         <div
             className="
-        min-h-screen px-6 pt-24
+        min-h-screen px-6 pt-24 pb-2
         bg-transparent text-black
          dark:text-white
         transition-colors duration-300
