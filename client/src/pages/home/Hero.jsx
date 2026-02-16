@@ -17,9 +17,9 @@ function Hero() {
         >
 
             {/* Center Content */}
-            <div className='w-1/2 flex flex-col gap-6 items-center text-center pt-40'>
+            <div className='w-[80%] md:max-w-[50%] lg:w-1/2 flex flex-col gap-6 items-center text-center pt-40'>
 
-                <h1 className='lg:text-[64px] text-3xl lg:leading-20 font-semibold'>
+                <h1 className='lg:text-[64px] text-4xl md:text-5xl lg:leading-20 font-semibold'>
                     Beautiful Landing Page <br /> Design for You
                 </h1>
 
