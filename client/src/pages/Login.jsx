@@ -4,7 +4,7 @@ import useAppStore from "../store/useAppStore";
 import GlowCircle from "../components/GlowCircle"
 export default function Login() {
     const navigate = useNavigate();
-    const { login, token,email:storedEmail} = useAppStore();
+    const { login, token} = useAppStore();
 
     const [email, setEmail] = useState("user@gmail.com");
     const [password, setPassword] = useState("user");
@@ -18,12 +18,12 @@ export default function Login() {
         }
 
         // Hardcoded demo credentials
-        if (email !== storedEmail || password !== "user") {
+        if (email !== 'user@gmail.com' || password !== "user") {
             setError("Invalid Credentials");
             return;
         }
 
-        login("fake-jwt-token", email, "User");
+        login("fake-jwt-token",email,password, "User");
 
         navigate("/home");
     };

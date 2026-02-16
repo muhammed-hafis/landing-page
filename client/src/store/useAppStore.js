@@ -6,15 +6,16 @@ const useAppStore = create((set) => ({
   email: localStorage.getItem("email") || "",
   name: localStorage.getItem("name") || "",
 
-  login: (token, email, name) => {
+  login: (token,email,password, name) => {
     localStorage.setItem("token", token);
     localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
 
     if (name) {
       localStorage.setItem("name", name);
     }
 
-    set({ token, email, name });
+    set({ token, name });
   },
 
   logout: () => {

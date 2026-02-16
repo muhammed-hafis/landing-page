@@ -11,11 +11,11 @@ import Settings from "./pages/settings/Settings";
 
 function App() {
 
-  const theme = useAppStore((state)=>state.theme)
-  
+  const theme = useAppStore((state) => state.theme)
   useEffect(() => {
     document.documentElement.classList.remove("light", "dark");
     document.documentElement.classList.add(theme);
+
   }, [theme]);
   return (
     <BrowserRouter>
@@ -48,9 +48,9 @@ function App() {
           path="/settings"
           element={
             <ProtectedRoute>
-             
-                <Settings />
-             
+
+              <Settings />
+
             </ProtectedRoute>
           }
         />
