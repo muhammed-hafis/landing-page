@@ -1,6 +1,6 @@
 # Landing Dashboard
 
-A modern, feature-rich landing page and admin dashboard built with React, Vite, and Tailwind CSS. Includes authentication, theme switching, user management, and a beautiful landing page with multiple sections.
+A modern, feature-rich landing page with integrated admin dashboard built with React, Vite, and Tailwind CSS. Includes authentication, dark/light theme switching, user management with search/sort/pagination, and a beautiful multi-section landing page.
 
 ## 📋 Setup
 
@@ -13,111 +13,116 @@ A modern, feature-rich landing page and admin dashboard built with React, Vite, 
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/muhammed-hafis/landing-page.git
-   cd landing-page
+   cd landing-page/client
    ```
 
-2. **Navigate to the client directory:**
-   ```bash
-   cd client
-   ```
-
-3. **Install dependencies:**
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-4. **Start the development server:**
+3. **Start development server:**
    ```bash
    npm run dev
    ```
+   Available at `http://localhost:5173`
 
-   The application will be available at `http://localhost:5173`
-
-5. **Build for production:**
+4. **Build for production:**
    ```bash
    npm run build
    ```
 
-6. **Preview the production build:**
+5. **Preview production build:**
    ```bash
    npm run preview
    ```
 
-7. **Run ESLint:**
+6. **Run code quality check:**
    ```bash
    npm run lint
    ```
 
 ### Demo Credentials
-
-For testing the application, use the following credentials:
 - **Email:** `user@gmail.com`
 - **Password:** `user`
 
 ## ✨ Features Checklist
 
-- ✅ **Authentication System**
-  - Login page with form validation
+- ✅ **Authentication & Security**
+  - Login page with form validation and error handling
   - Token-based authentication (demo with hardcoded credentials)
-  - Protected routes - unauthorized access redirects to login
-  - Logout functionality
+  - Protected routes - unauthorized users redirected to login
+  - Logout functionality with token cleanup
+  - Persistent auth state via localStorage
 
-- ✅ **Multi-Page Application**
-  - Landing Page - Hero section with company branding
-  - Dashboard - Real-time data visualization
-  - Users Page - List of users with detailed information
-  - Settings Page - User profile and preferences management
+- ✅ **Landing Page (Public)**
+  - Hero section with gradient wave animations
+  - Feature showcase with 6 feature boxes
+  - Third section with orbital graphics
+  - Global companies showcase section
+  - Contact form with validation
+  - Footer with links
+  - Responsive design across all devices
 
-- ✅ **Theme Support**
-  - Dark/Light mode toggle
-  - Persistent theme preference in localStorage
-  - Smooth theme transitions across all pages
-  - Logo adaptive to theme (dark and light versions)
-
-- ✅ **Dashboard Features**
-  - Fetch and display user data from JSONPlaceholder API
-  - Statistics cards showing total users, companies, website coverage
-  - Loading states with spinner animation
+- ✅ **Admin Dashboard (Protected)**
+  - Real-time user statistics (total users, companies, website coverage)
+  - User data fetched from JSONPlaceholder API
+  - Loading spinners with theme-aware styling
   - Error handling and display
+  - Responsive statistics cards
 
-- ✅ **User Management**
-  - View all users with complete information
-  - Display user details including company and website
-  - Contact information display
+- ✅ **User Management (Protected)**
+  - Browse all users with search functionality
+  - Real-time filtering by name or email
+  - Sort users (ascending/descending alphabetically)
+  - Pagination (6 users per page)
+  - View detailed user info in modal popup
+  - Display email, phone, website, company details
 
-- ✅ **Settings Management**
-  - Edit user profile (name)
+- ✅ **Settings (Protected)**
+  - Edit user profile name
   - View account email
-  - Theme toggle switch
-  - Save notifications with visual feedback
+  - Dark/Light theme toggle
+  - Save confirmation messages
+  - Settings persist via localStorage
+
+- ✅ **Theme System**
+  - Dark mode and Light mode support
+  - Smooth CSS transitions between themes
+  - Persistent theme preference in localStorage
+  - Adaptive logos (dark and light versions)
+  - All components theme-aware
 
 - ✅ **Navigation**
-  - Responsive navigation bar (desktop & mobile)
+  - Fixed responsive navbar with logo
+  - Desktop menu with active route highlighting
   - Mobile hamburger menu
-  - Active route highlighting
-  - Quick access to all pages for authenticated users
+  - Quick logout button
+  - Logo switches based on current theme
 
-- ✅ **Landing Page Sections**
-  - Hero section with call-to-action
-  - Feature showcase
-  - Multiple content sections
-  - Global reach section
-  - Contact section
-  - Footer with links
-
-- ✅ **UI/UX Enhancements**
-  - Responsive design (mobile, tablet, desktop)
+- ✅ **UI Components**
+  - GlowCircle - Animated glow effects
+  - HeroContainer - Dashboard preview display
+  - Modal - Reusable dialog component
+  - Footer - Links and info
+  - Responsive grid layouts
   - Smooth animations and transitions
-  - Loading spinners with theme awareness
-  - Modal components for dialogs
-  - Accessible form inputs with validation
-  - Tailwind CSS for modern styling
-  - Lucide React and React Icons for iconography
+
+- ✅ **Styling & UX**
+  - Tailwind CSS for utility-first styling
+  - Lucide React icons
+  - React Icons library
+  - Grid background patterns
+  - Gradient effects (pink to purple)
+  - Dark theme optimized for accessibility
+  - Hover effects and smooth transitions
 
 - ✅ **State Management**
-  - Zustand for global state management
-  - Persistent localStorage for auth and preferences
-  - Clean separation of concerns
+  - Zustand for global state
+  - Auth: token, email, name, login/logout methods
+  - Theme: dark/light toggle with persistence
+  - Profile: name editing and updates
+  - All state persists to localStorage
 
 ## 📸 Screenshots
 
@@ -148,158 +153,139 @@ For testing the application, use the following credentials:
   </tr>
 </table>
 
-
 ## 🏗️ Technology Stack
 
-| Component | Technology |
-|-----------|-----------|
-| Build Tool | Vite 7.1.6 |
-| Framework | React 19.1.1 |
-| Routing | React Router v7.13.0 |
-| State Management | Zustand 5.0.11 |
-| Styling | Tailwind CSS 4.1.18 |
-| 3D Graphics | Three.js + React Three Fiber |
-| UI Components | Bootstrap 5.3.8, Lucide React, React Icons |
-| Code Quality | ESLint 9.35.0 |
+| Layer | Technology |
+|-------|-----------|
+| **Build Tool** | Vite 7.1.6 |
+| **Framework** | React 19.1.1 |
+| **Routing** | React Router v7.13.0 |
+| **State Management** | Zustand 5.0.11 |
+| **Styling** | Tailwind CSS 4.1.18 |
+| **Icons** | Lucide React, React Icons |
+| **Utilities** | UUID (unique ID generation) |
+| **Linting** | ESLint 9.35.0 |
 
-## 🎯 Project Structure
+## 📝 Project Structure
 
 ```
-client/
-├── public/
-│   ├── icons/          # Icon assets
-│   ├── profile/        # Profile images
-│   └── text/           # Text assets
-├── src/
-│   ├── components/     # Reusable components
-│   │   ├── Navbar.jsx
-│   │   ├── Footer.jsx
-│   │   ├── Modal.jsx
-│   │   ├── GlowCircle.jsx
-│   │   └── HeroContainer.jsx
-│   ├── pages/          # Page components
-│   │   ├── Login.jsx
-│   │   ├── dashboard/
-│   │   │   └── Dashboard.jsx
-│   │   ├── home/       # Landing page sections
-│   │   │   ├── Home.jsx
-│   │   │   ├── Hero.jsx
-│   │   │   ├── Feature.jsx
-│   │   │   ├── Third.jsx
-│   │   │   ├── Global.jsx
-│   │   │   └── Contact.jsx
-│   │   ├── users/
-│   │   │   └── Users.jsx
-│   │   └── settings/
-│   │       └── Settings.jsx
-│   ├── routes/         # Route protection
-│   │   └── ProtectedRoute.jsx
-│   ├── store/          # Global state management
-│   │   └── useAppStore.js
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── package.json
-├── vite.config.js
-├── eslint.config.js
-└── index.html
+landing-dashboard/
+├── client/
+│   ├── public/
+│   │   ├── icons/          # Feature showcase icons
+│   │   ├── profile/        # Profile images
+│   │   └── text/           # Company logos/assets
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Navbar.jsx              # Top navigation with theme toggle
+│   │   │   ├── Footer.jsx              # Footer component
+│   │   │   ├── Modal.jsx               # Reusable modal dialog
+│   │   │   ├── GlowCircle.jsx          # Animated glow effects
+│   │   │   └── HeroContainer.jsx       # Dashboard preview display
+│   │   ├── pages/
+│   │   │   ├── Login.jsx               # Authentication page
+│   │   │   ├── dashboard/Dashboard.jsx # Stats & data visualization
+│   │   │   ├── home/
+│   │   │   │   ├── Home.jsx            # Landing page wrapper
+│   │   │   │   ├── Hero.jsx            # Hero section with gradient
+│   │   │   │   ├── Feature.jsx         # 6-box feature showcase
+│   │   │   │   ├── Third.jsx           # Orbital graphics section
+│   │   │   │   ├── Global.jsx          # Company logos section
+│   │   │   │   └── Contact.jsx         # Contact form
+│   │   │   ├── users/Users.jsx         # User list with search/sort/pagination
+│   │   │   └── settings/Settings.jsx   # Profile & theme settings
+│   │   ├── routes/ProtectedRoute.jsx   # Route protection wrapper
+│   │   ├── store/useAppStore.js        # Zustand global state
+│   │   ├── App.jsx                     # Main app with routing
+│   │   ├── Child.jsx                   # Demo component
+│   │   ├── main.jsx                    # React entry point
+│   │   └── index.css                   # Global styles
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── eslint.config.js
+│   └── index.html
+└── README.md
 ```
 
 ## 🛠️ Architecture & Design Decisions
 
-### 1. **Zustand for State Management**
-   - **Decision:** Used Zustand instead of Redux or Context API
-   - **Rationale:** Lightweight, simple API, minimal boilerplate, perfect for medium-sized apps
-   - **Trade-off:** Less suitable for very large applications with complex state trees
+| # | Decision | Why | Trade-off |
+|---|----------|-----|-----------|
+| 1 | **Zustand** for state management | Lightweight, minimal boilerplate, perfect for medium-sized apps | Not ideal for very large complex state trees |
+| 2 | **localStorage** for persistence | Simple implementation, automatic session persistence | Not secure for sensitive data; use httpOnly cookies in production |
+| 3 | **Hardcoded demo auth** | Quick testing without backend setup | Must replace with real API before production use |
+| 4 | **Vite** as build tool | Faster builds, better HMR, smaller bundles | Requires Node.js with ES module support |
+| 5 | **Tailwind CSS** for styling | Rapid development, consistent design system, smaller CSS output | Verbose HTML with utility classes; learning curve |
+| 6 | **Protected Routes** component | Simple token-based access control implementation | Could extend with role-based access control (RBAC) |
+| 7 | **JSONPlaceholder API** for demo data | Real-world API integration demonstration | Demo data unsuitable for production analytics |
+| 8 | **Mobile-first responsive design** | Better performance and UX on mobile devices | Requires careful CSS media query management |
+| 9 | **Fetch API** instead of Axios | No additional dependency, built-in browser support | Manual error handling and loading states required |
+| 10 | **Removed Three.js** | Reduced bundle size, simplified dependencies | Lost potential for 3D visual effects |
 
-### 2. **localStorage for Persistence**
-   - **Decision:** Chose localStorage for storing auth tokens and user preferences
-   - **Rationale:** Simple implementation, automatic persistence across sessions
-   - **Trade-off:** Not secure for sensitive data; in production, should use httpOnly cookies and secure backend sessions
+## 🔐 Security Considerations
 
-### 3. **Hardcoded Demo Authentication**
-   - **Decision:** Used hardcoded credentials for demo purposes
-   - **Rationale:** Quick testing without backend setup
-   - **Trade-off:** Obviously not suitable for production; should integrate with real API
+**Current Demo State:**
+- Hardcoded credentials for testing only (`user@gmail.com` / `user`)
+- Tokens stored in localStorage (not recommended for production)
+- No CSRF or rate limiting configured
 
-### 4. **Vite as Build Tool**
-   - **Decision:** Used Vite over Create React App
-   - **Rationale:** Faster build times, better HMR (Hot Module Replacement), smaller bundle size
-   - **Trade-off:** Requires Node.js with ES module support
-
-### 5. **Tailwind CSS for Styling**
-   - **Decision:** Utility-first CSS framework instead of CSS-in-JS or SCSS
-   - **Rationale:** Faster development, consistent design system, smaller CSS output with PurgeCSS
-   - **Trade-off:** HTML becomes verbose with many utility classes; learning curve for new developers
-
-### 6. **Protected Routes Pattern**
-   - **Decision:** Custom ProtectedRoute component wrapping children
-   - **Rationale:** Flexible, allows nuanced access control based on token presence
-   - **Trade-off:** Could be extended with role-based access control (RBAC) for more complex scenarios
-
-### 7. **External API Integration**
-   - **Decision:** Dashboard fetches real data from JSONPlaceholder API
-   - **Rationale:** Demonstrates real-world API integration and async data handling
-   - **Trade-off:** Demo data changes; not suitable for production analytics
-
-### 8. **Responsive Design Mobile-First**
-   - **Decision:** Mobile-first approach with breakpoints for larger screens
-   - **Rationale:** Better performance on mobile devices, progressive enhancement
-   - **Trade-off:** Requires careful CSS media query management
-
-### 9. **Bootstrap Dependency**
-   - **Decision:** Bootstrap included in dependencies alongside Tailwind
-   - **Rationale:** Possible for component libraries or legacy compatibility
-   - **Trade-off:** Redundant CSS frameworks increase bundle size; recommend removing if not used
-
-### 10. **Three.js for Visual Effects**
-   - **Decision:** Included React Three Fiber for potential 3D animations
-   - **Rationale:** Enhanced visual appeal with 3D components (GlowCircle)
-   - **Trade-off:** Adds to bundle size; performance impact on low-end devices
-
-## 📝 Environment Variables
-
-Currently, the app uses no environment variables. For production deployment, consider adding:
-
-```env
-VITE_API_BASE_URL=https://api.example.com
-VITE_AUTH_TOKEN_KEY=your_token_key
-```
-
-## 🔒 Security Considerations
-
-For production deployment:
-1. Replace demo authentication with real backend API
-2. Use httpOnly cookies instead of localStorage for tokens
-3. Implement CSRF protection
+**Production Requirements:**
+1. Replace hardcoded authentication with real backend API
+2. Use httpOnly cookies instead of localStorage for token storage
+3. Implement CSRF protection on sensitive endpoints
 4. Add rate limiting on login attempts
-5. Sanitize user input before storing
-6. Use HTTPS for all communications
-7. Implement proper error handling without exposing sensitive details
+5. Validate and sanitize all user inputs
+6. Enable HTTPS for all communications
+7. Implement secure session management
+8. Add proper error handling without exposing sensitive data
 
-## 🚀 Performance Optimizations
+## 🚀 Performance & Optimization
 
-- Tree-shaking via Vite
-- Code splitting with React Router
-- Lazy loading potential for heavy components
-- CSS purging with Tailwind
-- Responsive image optimization recommendations
+**Current Optimizations:**
+- Vite's tree-shaking and code splitting
+- React Router for component-level code splitting
+- Tailwind CSS with PurgeCSS for minimal output
+- Removed Three.js and Bootstrap to reduce bundle size
+- Static asset caching via public folder
+- Memoized components (React.memo usage)
 
-## 📚 Available Scripts
+**Future Improvements:**
+- Lazy load landing page sections with React.lazy()
+- Image optimization and WebP format conversion
+- Service Worker for offline support
+- API response caching strategies
+- Bundle size monitoring and analysis
 
-- `npm run dev` - Start development server with HMR
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build locally
-- `npm run lint` - Check code quality with ESLint
+## 📚 Available Commands
+
+| Command | Purpose |
+|---------|---------|
+| `npm run dev` | Start dev server with HMR at `localhost:5173` |
+| `npm run build` | Create production-optimized build in `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint to check code quality |
 
 ## 🤝 Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Contributions welcome! Please:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+For major changes, open an issue first to discuss your ideas.
 
 ## 📄 License
 
-This project is open source and available under the MIT License.
+Licensed under the MIT License. See LICENSE file for details.
+
+## 📞 Support & Feedback
+
+- Open an issue on GitHub for bugs or feature requests
+- Check existing issues before creating a new one
 
 ---
 
-**Built with ❤️ using React, Vite, and Tailwind CSS**
+**Built with ❤️ by Muhammed Hafis**  
+**Modern stack: React • Vite • Tailwind CSS • Zustand**
