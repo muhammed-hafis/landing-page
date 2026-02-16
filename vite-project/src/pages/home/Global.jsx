@@ -1,84 +1,122 @@
 import React from 'react'
 
 function Global() {
-  return (
-      <div className='bg-black p-10 relative'>
-          <div className="w-full h-[95vh] bg-[#18181C] py-24">
+    const logos = [
+        "/text/smile.png",
+        "/text/urban.png",
+        "/text/natural.png",
+        "/text/wave.png",
+        "/text/happy.png",
+        "/text/alisa.png",
+    ];
 
-              {/* Heading */}
-              <div className="max-w-6xl mx-auto text-center px-4">
-                  <h2 className="text-4xl md:text-5xl font-bold text-gray-200 leading-snug">
-                      Companies we Worked <br />
-                      With in SInce 2015
-                  </h2>
-              </div>
+    return (
+        <div
+            className="
+      p-10 relative
+      bg-transparent text-black
+       dark:text-white
+      transition-colors duration-300
+    "
+        >
+            {/* Companies Section */}
+            <div
+                className="
+        w-full min-h-[95vh] py-24
+        bg-gray-100
+        dark:bg-[#18181C]
+        transition-colors duration-300
+      "
+            >
 
-              {/* Logos Row */}
-              <div className="max-w-6xl mx-auto mt-14 flex flex-wrap justify-center gap-8 px-4">
+                {/* Heading */}
+                <div className="max-w-6xl mx-auto text-center px-4">
+                    <h2
+                        className="
+            text-4xl md:text-5xl font-bold leading-snug
+            text-gray-800
+            dark:text-gray-200
+          "
+                    >
+                        Companies we Worked <br />
+                        With Since 2015
+                    </h2>
+                </div>
 
-                  <div className="bg-black rounded-xl px-10 py-6 text-gray-400 text-xl font-semibold shadow-lg ">
-                      Smile
-                  </div>
+                {/* Logos Row */}
+                <div className="max-w-6xl mx-auto mt-14 flex flex-wrap justify-between gap-6">
 
-                  <div className="bg-black rounded-xl px-10 py-6 text-gray-400 text-xl font-semibold shadow-lg">
-                      Urban
-                  </div>
+                    {logos.map((logo, index) => (
+                        <div
+                            key={index}
+                            className="
+              rounded-xl px-7 py-6 text-xl font-semibold shadow-md
+              bg-white text-gray-600 border border-gray-200
+              dark:bg-black dark:text-gray-400 dark:border-white/5
+              transition-colors duration-300
+            "
+                        >
+                            <img
+                                src={logo}
+                                className="w-[100px]"
+                                alt={`logo-${index}`}
+                            />
+                        </div>
+                    ))}
 
-                  <div className="bg-black rounded-xl px-10 py-6 text-gray-400 text-xl font-semibold shadow-lg">
-                      natural
-                  </div>
+                </div>
+            </div>
 
-                  <div className="bg-black rounded-xl px-10 py-6 text-gray-400 text-xl font-semibold shadow-lg">
-                      WAVE
-                  </div>
+            {/* CTA Section */}
+            <div
+                className="
+        absolute mx-auto -bottom-45 left-45 right-45 z-10
+        max-w-6xl rounded-[40px] overflow-hidden
+        bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-600
+        py-3 flex items-center justify-between
+      "
+            >
 
-                  <div className="bg-black rounded-xl px-10 py-6 text-gray-400 text-xl font-semibold shadow-lg">
-                      Happy
-                  </div>
+                {/* LEFT CONTENT */}
+                <div className="max-w-xl text-white z-10 p-20 pr-0">
 
-                  <div className="bg-black rounded-xl px-10 py-6 text-gray-400 text-xl font-semibold shadow-lg">
-                      Alisa
-                  </div>
+                    <p className="text-lg mb-6 opacity-90">
+                        Love Our Tool?
+                    </p>
 
-              </div>
-          </div>
-          {/* map container*/}
+                    <h2 className="text-5xl font-bold leading-tight mb-10">
+                        Feel Free to Join our <br />
+                        15 Days Free Trial
+                    </h2>
 
-          <div className="absolute -bottom-45 left-45 right-45 z-10   max-w-6xl rounded-[40px] overflow-hidden bg-gradient-to-r py-3 from-pink-400 via-purple-500 to-indigo-600  flex items-center justify-between">
+                    <button
+                        className="
+            px-8 py-4 rounded-lg
+            bg-white text-black
+            dark:bg-black dark:text-white
+            hover:opacity-90
+            transition duration-300
+          "
+                    >
+                        Download Template
+                    </button>
 
-              {/* LEFT CONTENT */}
-              <div className="max-w-xl text-white z-10 p-20 pr-0">
+                </div>
 
-                  <p className="text-lg mb-6 opacity-90">
-                      Love our Our Tool?
-                  </p>
+                {/* RIGHT IMAGE */}
+                <div className="hidden lg:block">
+                    <img
+                        src="/map.png"
+                        alt="World Design"
+                        className="w-[600px] object-contain"
+                    />
+                </div>
 
-                  <h2 className="text-5xl font-bold leading-tight mb-10">
-                      Fell Free to Join our <br />
-                      15 Days Free Trial
-                  </h2>
+            </div>
 
-                  <button className="bg-black text-white px-8 py-4 rounded-lg 
-                         hover:bg-gray-900 transition duration-300">
-                      Download Template
-                  </button>
-              </div>
+        </div>
+    );
 
-
-              {/* RIGHT IMAGE */}
-              <div className="hidden lg:block ">
-                  <img
-                      src="/map.png"   // <-- replace with your image
-                      alt="World Design"
-                      className="w-[600px] object-fit"
-                  />
-              </div>
-
-          </div>
-
-
-      </div>
-  )
 }
 
 export default Global

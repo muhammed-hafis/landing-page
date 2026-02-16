@@ -2,12 +2,12 @@ import React from 'react'
 import { FaTwitter, FaLinkedinIn, FaDiscord } from "react-icons/fa";
 function Footer() {
   return (
-      <footer className="bg-black w-full pt-10">
+      <footer className=" bg-transparent w-full pt-10">
 
           {/* Main Container */}
           <div className="mx-10 bg-[#18181C] px-40 py-10">
 
-              <div className="grid grid-cols-2 gap-20">
+              <div className="flex flex-row md:justify-between flex-wrap gap-20">
 
                   {/* LEFT SIDE */}
                   <div>

@@ -5,8 +5,18 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Navbar from "./components/Navbar";
 import Users from "./pages/users/Users";
+import useAppStore from "./store/useAppStore";
+import { useEffect } from "react";
+import Settings from "./pages/settings/Settings";
 
 function App() {
+
+  const theme = useAppStore((state)=>state.theme)
+  
+  useEffect(() => {
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme);
+  }, [theme]);
   return (
     <BrowserRouter>
       <Navbar />
@@ -30,6 +40,17 @@ function App() {
           element={
             <ProtectedRoute>
               <Users />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/settings"
+          element={
+            <ProtectedRoute>
+             
+                <Settings />
+             
             </ProtectedRoute>
           }
         />

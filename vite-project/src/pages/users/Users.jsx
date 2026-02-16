@@ -50,8 +50,14 @@ export default function Users() {
     const totalPages = Math.ceil(sortedUsers.length / usersPerPage);
 
     return (
-        <div className="min-h-screen bg-black text-white px-6 pt-22">
-
+        <div
+            className="
+        min-h-screen px-6 pt-24
+        bg-transparent text-black
+         dark:text-white
+        transition-colors duration-300
+      "
+        >
             <h1 className="text-3xl font-bold mb-8">Users</h1>
 
             {/* Search + Sort */}
@@ -60,7 +66,13 @@ export default function Users() {
                 <input
                     type="text"
                     placeholder="Search by name or email..."
-                    className="flex-1 px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                    className="
+            flex-1 px-4 py-2 rounded-lg
+            bg-gray-100 border border-gray-300 text-black
+            dark:bg-zinc-900 dark:border-zinc-800 dark:text-white
+            focus:ring-2 focus:ring-purple-500 outline-none
+            transition-colors duration-300
+          "
                     value={search}
                     onChange={(e) => {
                         setSearch(e.target.value);
@@ -69,66 +81,86 @@ export default function Users() {
                 />
 
                 <select
-                    className="px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-lg"
+                    className="
+            px-4 py-2 rounded-lg
+            bg-gray-100 border border-gray-300 text-black
+            dark:bg-zinc-900 dark:border-zinc-800 dark:text-white
+            transition-colors duration-300
+          "
                     value={sortOrder}
                     onChange={(e) => setSortOrder(e.target.value)}
                 >
                     <option value="asc">A → Z</option>
                     <option value="desc">Z → A</option>
                 </select>
-
             </div>
+
+            {/* Loading Spinner */}
             {loading && (
                 <div className="flex justify-center items-center h-60">
                     <div className="w-12 h-12 border-4 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
                 </div>
             )}
+
             {/* Users Grid */}
-            {
-                !loading && (
+            {!loading && (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {currentUsers.map((user) => (
+                        <div
+                            key={user.id}
+                            className="
+                p-6 rounded-xl border shadow-md
+                bg-gray-100 border-gray-300
+                dark:bg-zinc-900 dark:border-zinc-800
+                hover:shadow-lg
+                transition-all duration-300
+              "
+                        >
+                            <div className="flex items-center gap-4 mb-4">
 
-                        {currentUsers.map((user) => (
-                            <div
-                                key={user.id}
-                                className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:border-purple-500 transition"
-                            >
-
-                                <div className="flex items-center gap-4 mb-4">
-                                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center font-bold">
-                                        {user.name.charAt(0)}
-                                    </div>
-
-                                    <div>
-                                        <h2 className="font-semibold">{user.name}</h2>
-                                        <p className="text-sm text-zinc-400">{user.email}</p>
-                                    </div>
+                                <div className="
+                  w-12 h-12 rounded-full
+                  bg-gradient-to-r from-pink-500 to-purple-600
+                  flex items-center justify-center font-bold text-white
+                ">
+                                    {user.name.charAt(0)}
                                 </div>
 
-                                <p className="text-sm text-zinc-400 mb-2">
-                                    Company: {user.company.name}
-                                </p>
-
-                                <p className="text-sm text-zinc-400 mb-4">
-                                    City: {user.address.city}
-                                </p>
-
-                                <button
-                                    onClick={() => setSelectedUser(user)}
-                                    className="w-full py-2 rounded-lg bg-gradient-to-r from-pink-500 to-purple-600 hover:opacity-90 transition"
-                                >
-                                    View Details
-                                </button>
-
+                                <div>
+                                    <h2 className="font-semibold">
+                                        {user.name}
+                                    </h2>
+                                    <p className="text-sm text-gray-600 dark:text-zinc-400">
+                                        {user.email}
+                                    </p>
+                                </div>
                             </div>
-                        ))}
 
-                    </div>
-                )
-            }
+                            <p className="text-sm text-gray-600 dark:text-zinc-400 mb-2">
+                                Company: {user.company.name}
+                            </p>
 
+                            <p className="text-sm text-gray-600 dark:text-zinc-400 mb-4">
+                                City: {user.address.city}
+                            </p>
 
+                            <button
+                                onClick={() => setSelectedUser(user)}
+                                className="
+                  w-full py-2 rounded-lg text-white
+                  bg-gradient-to-r from-pink-500 to-purple-600
+                  hover:opacity-90 transition
+                "
+                            >
+                                View Details
+                            </button>
+
+                        </div>
+                    ))}
+
+                </div>
+            )}
 
             {/* Pagination */}
             <div className="flex justify-center mt-10 gap-3">
@@ -137,10 +169,13 @@ export default function Users() {
                     <button
                         key={i}
                         onClick={() => setCurrentPage(i + 1)}
-                        className={`px-4 py-2 rounded-lg ${currentPage === i + 1
-                            ? "bg-purple-600"
-                            : "bg-zinc-800 hover:bg-zinc-700"
-                            }`}
+                        className={`
+              px-4 py-2 rounded-lg transition
+              ${currentPage === i + 1
+                                ? "bg-purple-600 text-white"
+                                : "bg-gray-200 text-black hover:bg-gray-300 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700"
+                            }
+            `}
                     >
                         {i + 1}
                     </button>
@@ -167,7 +202,6 @@ export default function Users() {
                     </>
                 )}
             </Modal>
-
 
         </div>
     );
