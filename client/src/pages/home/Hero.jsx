@@ -23,12 +23,12 @@ function Hero() {
                     Beautiful Landing Page <br /> Design for You
                 </h1>
 
-                <p className='text-gray-600 dark:text-zinc-400 text-lg'>
+                <p className='text-gray-600 dark:text-zinc-400 lg:text-lg'>
                     A good design is not only aesthetically pleasing but also
                     functional. It should be able to solve the problem
                 </p>
 
-                <button className='py-2 px-6 rounded text-white bg-gradient-to-r from-pink-400 to-purple-500 hover:opacity-90 transition'>
+                <button className='py-3 px-2 lg:px-6 rounded text-white bg-gradient-to-r from-pink-400 to-purple-500 hover:opacity-90 transition text-sm' >
                     Download Template
                 </button>
 
