@@ -26,10 +26,9 @@ const useAppStore = create((set) => ({
   // 🎨 Theme
   theme: localStorage.getItem("theme") || "dark",
 
-  updateProfile: (name, email) => {
+  updateProfile: (name) => {
     localStorage.setItem("name", name);
-    localStorage.setItem("email", email);
-    set({ name, email });
+    set({ name });
   },
 
   toggleTheme: () =>
